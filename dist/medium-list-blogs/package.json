@@ -1,0 +1,31 @@
+{
+  "name": "medium-list-blogs",
+  "version": "0.0.1",
+  "description": "A Demo Project ",
+  "author": "Mahmadsadik Koliya ",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mahmadsadikRepositry/medium-blog-list.git"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "bundles/medium-list-blogs.umd.js",
+  "module": "fesm5/medium-list-blogs.js",
+  "es2015": "fesm2015/medium-list-blogs.js",
+  "esm5": "esm5/medium-list-blogs.js",
+  "esm2015": "esm2015/medium-list-blogs.js",
+  "fesm5": "fesm5/medium-list-blogs.js",
+  "fesm2015": "fesm2015/medium-list-blogs.js",
+  "typings": "medium-list-blogs.d.ts",
+  "metadata": "medium-list-blogs.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}
