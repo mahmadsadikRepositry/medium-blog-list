@@ -30,7 +30,11 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              {
+                "input": "node_modules/document-register-element/build/document-register-element.js"
+              }
+            ]
           },
           "configurations": {
             "production": {
@@ -124,6 +128,42 @@
           }
         }
       }
-    }},
+    },
+    "medium-list-blogs": {
+      "projectType": "library",
+      "root": "projects/medium-list-blogs",
+      "sourceRoot": "projects/medium-list-blogs/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/medium-list-blogs/tsconfig.lib.json",
+            "project": "projects/medium-list-blogs/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/medium-list-blogs/src/test.ts",
+            "tsConfig": "projects/medium-list-blogs/tsconfig.spec.json",
+            "karmaConfig": "projects/medium-list-blogs/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/medium-list-blogs/tsconfig.lib.json",
+              "projects/medium-list-blogs/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "defaultProject": "blog-list-libraryapp"
 }

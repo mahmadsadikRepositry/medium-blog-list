@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "medium-list-blogs": [
+        "dist/medium-list-blogs"
+      ],
+      "medium-list-blogs/*": [
+        "dist/medium-list-blogs/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

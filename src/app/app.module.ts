@@ -1,16 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import { NgModule, Injector } from '@angular/core';
+// import {MediumListBlogsModule, MediumListBlogsComponent } from 'projects/medium-list-blogs/src/public-api';
+import {MediumListBlogsModule, MediumListBlogsComponent} from 'medium-list-blogs';
+import { createCustomElement } from '@angular/elements';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MediumListBlogsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: []
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private injector: Injector) { }
+
+  ngDoBootstrap() {
+    const ngElement = createCustomElement(MediumListBlogsComponent, {
+      injector: this.injector
+    });
+    customElements.define('medium-blog-list', ngElement);
+  }
+ }
